@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #363C47;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #DCF3EA;
+  color: #065F43;
+}
+
+:focus-visible {
+  outline: 2px solid #087A58;
+  outline-offset: 3px;
+}
+
+/* Typography styles according to DESIGN.md */
+.headline-display {
+  font-family: var(--font-sans);
+  font-size: clamp(36px, 5.5vw, 60px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.headline-lg {
+  font-family: var(--font-sans);
+  font-size: clamp(31px, 4.2vw, 47px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.headline-md {
+  font-family: var(--font-sans);
+  font-size: clamp(23px, 3vw, 29px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.stat-number {
+  font-family: var(--font-sans);
+  font-size: clamp(44px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.body-lead {
+  font-size: clamp(17.5px, 2vw, 20px);
+  line-height: 1.72;
+  color: #5B6472;
+  text-wrap: pretty;
+}
+
+.body-text {
+  font-size: 17px;
+  line-height: 1.72;
+  color: #363C47;
+  text-wrap: pretty;
+}
+
+.body-sm {
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.label-pill-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Scanline background for headline card */
+.scanline-bg {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

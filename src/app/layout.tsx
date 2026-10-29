@@ -1,0 +1,42 @@
+import type { Metadata, Viewport } from 'next';
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import './globals.css';
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: 'CLAIM READY — Free Warranty Claim Checklist',
+  description: 'A free checklist for anyone about to file a warranty claim. Decided on facts, in writing.',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={`${plusJakartaSans.variable} ${jetbrainsMono.variable}`}>
+      <body className="min-h-screen bg-white text-on-surface antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}
